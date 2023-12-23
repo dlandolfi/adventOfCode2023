@@ -19,16 +19,16 @@ func main() {
 
 	defer f.Close() // defers closing file until main() is done
 
-	scanner := bufio.NewScanner(f)
 	scanner1 := bufio.NewScanner(f)
+	scanner2 := bufio.NewScanner(f)
 
-	partOneValue := partOne(scanner)
+	partOneValue := partOne(scanner1)
 	fmt.Println("Part One:", partOneValue)
 
-	// reset file point back to beginning
+	// reset file pointer back to beginning
 	f.Seek(0, 0)
 
-	partTwoValue := partTwo(scanner1)
+	partTwoValue := partTwo(scanner2)
 	fmt.Println("Part Two:", partTwoValue)
 }
 
